@@ -1,0 +1,5 @@
+{
+  "name": "ReguAI - Medical Device Premarket Review Analyzer",
+  "description": "An agentic AI system that analyzes medical device premarket review guidance or 510(k) summaries. It reorganizes documents, generates 30 infographics, a 100-point review checklist, and 20 follow-up questions. Features a WOW UI with 20 painter styles, light/dark themes, and EN/ZH language support.",
+  "requestFramePermissions": []
+}

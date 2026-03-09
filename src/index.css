@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --primary-color: #3b82f6;
+    --secondary-color: #64748b;
+    --accent-color: #f59e0b;
+    --border-color: #e2e8f0;
+    --card-bg: #f8fafc;
+  }
+
+  .dark {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --primary-color: #60a5fa;
+    --secondary-color: #94a3b8;
+    --accent-color: #fbbf24;
+    --border-color: #334155;
+    --card-bg: #1e293b;
+  }
+
+  /* 20 Painter Themes */
+  .theme-van-gogh { --primary-color: #1e3a8a; --accent-color: #facc15; --bg-color: #f0fdf4; --text-color: #0f172a; --card-bg: #e0f2fe; }
+  .theme-monet { --primary-color: #86efac; --accent-color: #93c5fd; --bg-color: #fdf4ff; --text-color: #1e1b4b; --card-bg: #fae8ff; }
+  .theme-picasso { --primary-color: #b45309; --accent-color: #1e40af; --bg-color: #fffbeb; --text-color: #451a03; --card-bg: #fef3c7; }
+  .theme-dali { --primary-color: #ea580c; --accent-color: #a16207; --bg-color: #fff7ed; --text-color: #431407; --card-bg: #ffedd5; }
+  .theme-rembrandt { --primary-color: #78350f; --accent-color: #d97706; --bg-color: #fefce8; --text-color: #451a03; --card-bg: #fef9c3; }
+  .theme-klimt { --primary-color: #eab308; --accent-color: #ca8a04; --bg-color: #fffbeb; --text-color: #422006; --card-bg: #fef3c7; }
+  .theme-mondrian { --primary-color: #dc2626; --accent-color: #2563eb; --bg-color: #ffffff; --text-color: #000000; --card-bg: #f8fafc; border: 2px solid black; }
+  .theme-kandinsky { --primary-color: #ec4899; --accent-color: #3b82f6; --bg-color: #fdf2f8; --text-color: #831843; --card-bg: #fce7f3; }
+  .theme-munch { --primary-color: #9f1239; --accent-color: #ea580c; --bg-color: #fff1f2; --text-color: #4c0519; --card-bg: #ffe4e6; }
+  .theme-okeeffe { --primary-color: #f472b6; --accent-color: #fdba74; --bg-color: #fdf4ff; --text-color: #4a044e; --card-bg: #fae8ff; }
+  .theme-kahlo { --primary-color: #16a34a; --accent-color: #dc2626; --bg-color: #f0fdf4; --text-color: #14532d; --card-bg: #dcfce7; }
+  .theme-warhol { --primary-color: #db2777; --accent-color: #eab308; --bg-color: #fdf2f8; --text-color: #831843; --card-bg: #fce7f3; }
+  .theme-hokusai { --primary-color: #1d4ed8; --accent-color: #60a5fa; --bg-color: #eff6ff; --text-color: #1e3a8a; --card-bg: #dbeafe; }
+  .theme-davinci { --primary-color: #854d0e; --accent-color: #a16207; --bg-color: #fefce8; --text-color: #422006; --card-bg: #fef9c3; }
+  .theme-michelangelo { --primary-color: #0ea5e9; --accent-color: #fca5a5; --bg-color: #f0f9ff; --text-color: #0c4a6e; --card-bg: #e0f2fe; }
+  .theme-renoir { --primary-color: #f87171; --accent-color: #fcd34d; --bg-color: #fef2f2; --text-color: #7f1d1d; --card-bg: #fee2e2; }
+  .theme-matisse { --primary-color: #10b981; --accent-color: #d946ef; --bg-color: #ecfdf5; --text-color: #064e3b; --card-bg: #d1fae5; }
+  .theme-hopper { --primary-color: #047857; --accent-color: #f59e0b; --bg-color: #f0fdf4; --text-color: #064e3b; --card-bg: #dcfce7; }
+  .theme-rothko { --primary-color: #991b1b; --accent-color: #ea580c; --bg-color: #fef2f2; --text-color: #450a0a; --card-bg: #fee2e2; }
+  .theme-basquiat { --primary-color: #000000; --accent-color: #ef4444; --bg-color: #ffffff; --text-color: #000000; --card-bg: #f3f4f6; }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
