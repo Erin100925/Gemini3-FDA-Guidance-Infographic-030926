@@ -53,4 +53,46 @@
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  @media print {
+    body {
+      background-color: white !important;
+      color: black !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .print\:hidden {
+      display: none !important;
+    }
+    
+    .print\:block {
+      display: block !important;
+    }
+
+    .print\:mb-12 {
+      margin-bottom: 3rem !important;
+    }
+
+    .print\:shadow-none {
+      box-shadow: none !important;
+    }
+
+    .print\:border-none {
+      border: none !important;
+    }
+
+    .print\:p-2 {
+      padding: 0.5rem !important;
+    }
+
+    .print\:bg-transparent {
+      background-color: transparent !important;
+    }
+
+    /* Force page breaks for clean printing */
+    .print\:mb-12 {
+      page-break-after: always;
+    }
+  }
 }

@@ -5,7 +5,7 @@ import { DocumentInput } from './components/DocumentInput';
 import { MarkdownEditor } from './components/MarkdownEditor';
 import { Dashboard } from './components/Dashboard';
 import { Loader2 } from 'lucide-react';
-import { reorganizeDocument, generateTopics, generateChecklist, generateQuestions } from './services/gemini';
+import { reorganizeDocument, generateTopics, generateChecklist, generateQuestions, generateRiskRadar, generateSEMatrix, generateDeficiencyLetter } from './services/gemini';
 
 export default function App() {
   const [state, setState] = useState<AppState>({
@@ -17,6 +17,9 @@ export default function App() {
     topics: [],
     checklist: [],
     questions: [],
+    riskRadar: [],
+    seMatrix: null,
+    deficiencyLetter: null,
     isLoading: false,
     loadingMessage: '',
   });
@@ -69,7 +72,22 @@ export default function App() {
       const checklist = await generateChecklist(state.markdown, state.language);
       updateState({ checklist });
 
-      // 3. Generate Questions
+      // 3. Generate Risk Radar
+      updateState({ loadingMessage: 'Generating Regulatory Risk Radar...' });
+      const riskRadar = await generateRiskRadar(state.markdown, state.language);
+      updateState({ riskRadar });
+
+      // 4. Generate SE Matrix
+      updateState({ loadingMessage: 'Generating Substantial Equivalence Matrix...' });
+      const seMatrix = await generateSEMatrix(state.markdown, state.language);
+      updateState({ seMatrix });
+
+      // 5. Generate FDA Letter
+      updateState({ loadingMessage: 'Simulating FDA Deficiency Letter...' });
+      const deficiencyLetter = await generateDeficiencyLetter(state.markdown, state.language);
+      updateState({ deficiencyLetter });
+
+      // 6. Generate Questions
       updateState({ loadingMessage: 'Generating 20 Follow-up Questions...' });
       const questions = await generateQuestions(state.markdown, state.language);
       
